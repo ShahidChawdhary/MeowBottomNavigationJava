@@ -234,13 +234,13 @@ public final class BezierView extends View {
     private void calculateInner() {
         float extra = this.shadowHeight;
         innerArray[0] = new PointF(0f, bezierInnerHeight + extra);
-        innerArray[1] = new PointF((bezierX - bezierInnerWidth / 2), bezierInnerHeight + extra);
-        innerArray[2] = new PointF(bezierX - bezierInnerWidth / 4, bezierInnerHeight + extra);
-        innerArray[3] = new PointF(bezierX - bezierInnerWidth / 4, height - extra);
-        innerArray[4] = new PointF(bezierX, height - extra);
-        innerArray[5] = new PointF(bezierX + bezierInnerWidth / 4, height - extra);
-        innerArray[6] = new PointF(bezierX + bezierInnerWidth / 4, bezierInnerHeight + extra);
-        innerArray[7] = new PointF(bezierX + bezierInnerWidth / 2, bezierInnerHeight + extra);
+        innerArray[1] = new PointF((bezierX - bezierInnerWidth + 244), bezierInnerHeight + extra);
+        innerArray[2] = new PointF(bezierX - bezierInnerWidth + 242, bezierInnerHeight + extra);
+        innerArray[3] = new PointF(bezierX - bezierInnerWidth + 241, height - 38);
+        innerArray[4] = new PointF(bezierX, height - 35);
+        innerArray[5] = new PointF(bezierX + bezierInnerWidth - 241, height - 38);
+        innerArray[6] = new PointF(bezierX + bezierInnerWidth - 242, bezierInnerHeight + extra);
+        innerArray[7] = new PointF(bezierX + bezierInnerWidth - 244, bezierInnerHeight + extra);
         innerArray[8] = new PointF(width, bezierInnerHeight + extra);
         innerArray[9] = new PointF(width, height);
         innerArray[10] = new PointF(0f, height);
