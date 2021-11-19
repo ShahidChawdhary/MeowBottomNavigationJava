@@ -70,7 +70,7 @@ public final class MeowBottomNavigation extends FrameLayout {
         this.countTextColor = Color.parseColor("#ffffff");
         this.countBackgroundColor = Color.parseColor("#ff0000");
         this.rippleColor = Color.parseColor("#757575");
-        this.heightCell = Utils.dip(this.getContext(), 72);
+        this.heightCell = Utils.dip(this.getContext(), 95);
         this.initializeViews();
     }
 
@@ -87,7 +87,7 @@ public final class MeowBottomNavigation extends FrameLayout {
         this.countTextColor = Color.parseColor("#ffffff");
         this.countBackgroundColor = Color.parseColor("#ff0000");
         this.rippleColor = Color.parseColor("#757575");
-        this.heightCell = Utils.dip(this.getContext(), 72);
+        this.heightCell = Utils.dip(this.getContext(), 95);
         this.setAttributeFromXml(context, attrs);
         this.initializeViews();
     }
@@ -105,7 +105,7 @@ public final class MeowBottomNavigation extends FrameLayout {
         this.countTextColor = Color.parseColor("#ffffff");
         this.countBackgroundColor = Color.parseColor("#ff0000");
         this.rippleColor = Color.parseColor("#757575");
-        this.heightCell = Utils.dip(this.getContext(), 72);
+        this.heightCell = Utils.dip(this.getContext(), 95);
         this.setAttributeFromXml(context, attrs);
         this.initializeViews();
     }

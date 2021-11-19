@@ -7,6 +7,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PointF;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 /**
@@ -129,7 +130,7 @@ public final class BezierView extends View {
     }
 
     private void initializeViews() {
-        shadowHeight = Utils.dipf(getContext(), 8);
+        shadowHeight = Utils.dipf(getContext(), 4);
         setWillNotDraw(false);
 
         mainPath = new Path();
@@ -234,13 +235,13 @@ public final class BezierView extends View {
     private void calculateInner() {
         float extra = this.shadowHeight;
         innerArray[0] = new PointF(0f, bezierInnerHeight + extra);
-        innerArray[1] = new PointF((bezierX - bezierInnerWidth + 244), bezierInnerHeight + extra);
-        innerArray[2] = new PointF(bezierX - bezierInnerWidth + 242, bezierInnerHeight + extra);
-        innerArray[3] = new PointF(bezierX - bezierInnerWidth + 241, height - 38);
-        innerArray[4] = new PointF(bezierX, height - 35);
-        innerArray[5] = new PointF(bezierX + bezierInnerWidth - 241, height - 38);
-        innerArray[6] = new PointF(bezierX + bezierInnerWidth - 242, bezierInnerHeight + extra);
-        innerArray[7] = new PointF(bezierX + bezierInnerWidth - 244, bezierInnerHeight + extra);
+        innerArray[1] = new PointF((bezierX - bezierInnerWidth / 3), bezierInnerHeight + extra);
+        innerArray[2] = new PointF(bezierX - bezierInnerWidth / 3, bezierInnerHeight + extra * 2);
+        innerArray[3] = new PointF(bezierX - bezierInnerWidth / 4, height - extra * 5);
+        innerArray[4] = new PointF(bezierX  , height - extra * 5);
+        innerArray[5] = new PointF(bezierX + bezierInnerWidth / 4, height - extra * 5);
+        innerArray[6] = new PointF(bezierX + bezierInnerWidth / 3, bezierInnerHeight + extra * 2);
+        innerArray[7] = new PointF(bezierX + bezierInnerWidth / 3, bezierInnerHeight + extra);
         innerArray[8] = new PointF(width, bezierInnerHeight + extra);
         innerArray[9] = new PointF(width, height);
         innerArray[10] = new PointF(0f, height);
