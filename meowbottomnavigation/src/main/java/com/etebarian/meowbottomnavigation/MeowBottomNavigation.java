@@ -49,7 +49,6 @@ public final class MeowBottomNavigation extends FrameLayout {
     private int shadowColor;
     private int countTextColor;
     private int countBackgroundColor;
-
     private Typeface countTypeface;
     private int rippleColor;
     private boolean allowDraw;
@@ -70,7 +69,7 @@ public final class MeowBottomNavigation extends FrameLayout {
         this.countTextColor = Color.parseColor("#ffffff");
         this.countBackgroundColor = Color.parseColor("#ff0000");
         this.rippleColor = Color.parseColor("#757575");
-        this.heightCell = Utils.dip(this.getContext(), 72);
+        this.heightCell = Utils.dip(this.getContext(), 110);
         this.initializeViews();
     }
 
@@ -87,7 +86,7 @@ public final class MeowBottomNavigation extends FrameLayout {
         this.countTextColor = Color.parseColor("#ffffff");
         this.countBackgroundColor = Color.parseColor("#ff0000");
         this.rippleColor = Color.parseColor("#757575");
-        this.heightCell = Utils.dip(this.getContext(), 72);
+        this.heightCell = Utils.dip(this.getContext(), 110);
         this.setAttributeFromXml(context, attrs);
         this.initializeViews();
     }
@@ -105,7 +104,7 @@ public final class MeowBottomNavigation extends FrameLayout {
         this.countTextColor = Color.parseColor("#ffffff");
         this.countBackgroundColor = Color.parseColor("#ff0000");
         this.rippleColor = Color.parseColor("#757575");
-        this.heightCell = Utils.dip(this.getContext(), 72);
+        this.heightCell = Utils.dip(this.getContext(), 110);
         this.setAttributeFromXml(context, attrs);
         this.initializeViews();
     }
@@ -307,9 +306,9 @@ public final class MeowBottomNavigation extends FrameLayout {
                 it.setCountTypeface(this.countTypeface);
             }
 
-            BezierView var10000 = this.bezierView;
+             BezierView var10000 = this.bezierView;
 
-            var10000.setColor(this.backgroundBottomColor);
+             var10000.setColor(this.backgroundBottomColor);
         }
     }
 

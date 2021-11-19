@@ -95,7 +95,7 @@ public final class CellImageView extends AppCompatImageView {
     }
 
     public final void setSize(int value) {
-        this.size = value;
+        this.size =value;
         this.requestLayout();
     }
 
@@ -135,8 +135,8 @@ public final class CellImageView extends AppCompatImageView {
                             var6 = Utils.changeColorDrawableRes(this.getContext(), this.resource, this.color);
                         }
 
-                        Drawable drawable = var6;
-                        this.setImageDrawable(drawable);
+                       Drawable drawable = var6;
+                       this.setImageDrawable(drawable);
                     } catch (Exception var3) {
                         var3.printStackTrace();
                     }

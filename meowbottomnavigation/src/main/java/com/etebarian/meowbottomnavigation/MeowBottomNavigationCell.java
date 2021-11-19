@@ -8,9 +8,11 @@ import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.RippleDrawable;
 import android.os.Build;
+import android.security.keystore.StrongBoxUnavailableException;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -270,7 +272,7 @@ final class MeowBottomNavigationCell extends RelativeLayout {
     private void setProgress(float value) {
         this.progress = value;
         FrameLayout var10000 = (FrameLayout) this._$_findCachedViewById(R.id.fl);
-        var10000.setY((1.0F - this.progress) * (float) Utils.dip(this.getContext(), 18) + (float) Utils.dip(this.getContext(), -2));
+        var10000.setY((1.0F - this.progress) * (float) Utils.dip(this.getContext(), 40) + (float) Utils.dip(this.getContext(), -14));
         CellImageView var5 = (CellImageView) this._$_findCachedViewById(R.id.iv);
         var5.setColor(this.progress == 1.0F ? this.selectedIconColor : this.defaultIconColor);
         float scale = (1.0F - this.progress) * -0.2F + 1.0F;
@@ -285,9 +287,8 @@ final class MeowBottomNavigationCell extends RelativeLayout {
         ViewCompat.setElevation(this._$_findCachedViewById(R.id.v_circle), this.progress > 0.7F ? Utils.dipf(this.getContext(), this.progress * 4.0F) : 0.0F);
         int m = Utils.dip(this.getContext(), 24);
         View var6 = this._$_findCachedViewById(R.id.v_circle);
-        var6.setX((1.0F - this.progress) * (float) (this.isFromLeft ? -m : m) + (float) (this.getMeasuredWidth() - Utils.dip(this.getContext(), 48)) / 2.0F);
-        var6 = this._$_findCachedViewById(R.id.v_circle);
-        var6.setY((1.0F - this.progress) * (float) this.getMeasuredHeight() + (float) Utils.dip(this.getContext(), 6));
+        var6.setX((1.0F - this.progress) * (float) (this.isFromLeft ? -m : m) + (float) (this.getMeasuredWidth() - Utils.dip(this.getContext(), 60)) / 2.0F);        var6 = this._$_findCachedViewById(R.id.v_circle);
+        var6.setY((1.0F - this.progress) * (float) this.getMeasuredHeight() + (float) Utils.dip(this.getContext(), 0));
     }
 
     public final boolean isEnabledCell() {
@@ -348,7 +349,7 @@ final class MeowBottomNavigationCell extends RelativeLayout {
 
     private void initializeView() {
         this.allowDraw = true;
-        View var10001 = LayoutInflater.from(this.getContext()).inflate(R.layout.meow_navigation_cell, this);
+       View var10001 = LayoutInflater.from(this.getContext()).inflate(R.layout.meow_navigation_cell, this);
         this.setContainerView(var10001);
         this.draw();
     }
@@ -390,14 +391,14 @@ final class MeowBottomNavigationCell extends RelativeLayout {
     // $FF: synthetic method
     public static void enableCell$default(MeowBottomNavigationCell var0, boolean var1, int var2, Object var3) {
         if ((var2 & 1) != 0) {
-            var1 = true;
+            var1 =true;
         }
 
         var0.enableCell(var1);
     }
 
     private void animateProgress(boolean enableCell, boolean isAnimate) {
-        long d = enableCell ? this.duration : 250L;
+        long d = enableCell ? this.duration : 230L;
         ValueAnimator anim = ValueAnimator.ofFloat(0.0F, 1.0F);
         boolean var7 = false;
         boolean var8 = false;

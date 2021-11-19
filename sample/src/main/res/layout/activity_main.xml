@@ -14,10 +14,13 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <ImageView
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/img_meow_large" />
+                android:text="BottomBar"
+                android:textSize="50dp"
+                android:textStyle="bold"
+                />
 
             <TextView
                 android:id="@+id/tv_selected"
@@ -35,15 +38,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            app:mbn_circleColor="#ffffff"
+            app:mbn_circleColor="#2168AA"
             app:mbn_backgroundBottomColor="#ffffff"
-            app:mbn_countBackgroundColor="#ff6f00"
-            app:mbn_countTextColor="#ffffff"
-            app:mbn_countTypeface="fonts/SourceSansPro-Regular.ttf"
-            app:mbn_defaultIconColor="#90a4ae"
-            app:mbn_rippleColor="#2f424242"
-            app:mbn_selectedIconColor="#3c415e"
-            app:mbn_shadowColor="#1f212121" />
+            app:mbn_rippleColor="#76ED0E"
+            app:mbn_defaultIconColor="#2168AA"
+            app:mbn_selectedIconColor="#ffffff"
+            app:mbn_shadowColor="#A88F8D" />
 
     </FrameLayout>
 
