@@ -32,7 +32,7 @@ public final class MeowBottomNavigation extends FrameLayout {
     public interface ReselectListener{
         void onReselectItem(Model item);
     }
-
+     boolean loged_in=false;
     private ArrayList<Model> models;
     private ArrayList<MeowBottomNavigationCell> cells;
     private boolean callListenerWhenIsSelected;
@@ -277,8 +277,17 @@ public final class MeowBottomNavigation extends FrameLayout {
                 }
 
                 if (!cell.isEnabledCell() && !MeowBottomNavigation.access$isAnimating$p(MeowBottomNavigation.this)) {
-                    MeowBottomNavigation.show$default(MeowBottomNavigation.this, model.getId(), false, 2, null);
-                    MeowBottomNavigation.this.onClickedListener.onClickItem(model);
+                    if (loged_in){
+                        MeowBottomNavigation.show$default(MeowBottomNavigation.this, model.getId(), false, 2, null);
+                        MeowBottomNavigation.this.onClickedListener.onClickItem(model);
+                    }else {
+                        if (model.getId() == 2 || model.getId() == 3) {
+                            //nothing
+                        } else {
+                            MeowBottomNavigation.show$default(MeowBottomNavigation.this, model.getId(), false, 2, null);
+                            MeowBottomNavigation.this.onClickedListener.onClickItem(model);
+                        }
+                    }
                 } else if (MeowBottomNavigation.access$getCallListenerWhenIsSelected$p(MeowBottomNavigation.this)) {
                     MeowBottomNavigation.access$getOnClickedListener$p(MeowBottomNavigation.this).onClickItem(model);
                 }
@@ -394,6 +403,9 @@ public final class MeowBottomNavigation extends FrameLayout {
 
     public final boolean isShowing(int id) {
         return this.selectedId == id;
+    }
+    public void isLogin(boolean logIn) {
+        loged_in  = logIn;
     }
 
     public final MeowBottomNavigation.Model getModelById(int id) {
