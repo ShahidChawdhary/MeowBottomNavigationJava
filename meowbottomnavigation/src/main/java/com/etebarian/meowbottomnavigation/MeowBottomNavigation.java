@@ -283,6 +283,7 @@ public final class MeowBottomNavigation extends FrameLayout {
                     }else {
                         if (model.getId() == 2 || model.getId() == 3) {
                             //nothing
+                            MeowBottomNavigation.this.onClickedListener.onClickItem(model);
                         } else {
                             MeowBottomNavigation.show$default(MeowBottomNavigation.this, model.getId(), false, 2, null);
                             MeowBottomNavigation.this.onClickedListener.onClickItem(model);
