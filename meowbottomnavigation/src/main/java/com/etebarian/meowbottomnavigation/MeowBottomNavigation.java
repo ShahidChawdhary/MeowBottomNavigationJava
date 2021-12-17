@@ -330,7 +330,7 @@ public final class MeowBottomNavigation extends FrameLayout {
         int var8 = pos - nPos;
         boolean var9 = false;
         int dif = Math.abs(var8);
-        long d = (long) dif * 100L + 150L;
+        long d = (long) dif * 70L + 110L;
         long animDuration = enableAnimation ? d : 1L;
         FastOutSlowInInterpolator animInterpolator = new FastOutSlowInInterpolator();
         ValueAnimator anim = ValueAnimator.ofFloat(0.0F, 1.0F);
