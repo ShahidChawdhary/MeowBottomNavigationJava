@@ -57,14 +57,14 @@ final class MeowBottomNavigationCell extends RelativeLayout {
     public MeowBottomNavigationCell( Context context) {
         super(context);
         this.count = "empty";
-        this.iconSize = Utils.dip(this.getContext(), 48);
+        this.iconSize = Utils.dip(this.getContext(), 54);
         this.initializeView();
     }
 
     public MeowBottomNavigationCell( Context context,  AttributeSet attrs) {
         super(context, attrs);
         this.count = "empty";
-        this.iconSize = Utils.dip(this.getContext(), 48);
+        this.iconSize = Utils.dip(this.getContext(), 54);
         this.setAttributeFromXml(context, attrs);
         this.initializeView();
     }
@@ -72,7 +72,7 @@ final class MeowBottomNavigationCell extends RelativeLayout {
     public MeowBottomNavigationCell( Context context,  AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         this.count = "empty";
-        this.iconSize = Utils.dip(this.getContext(), 48);
+        this.iconSize = Utils.dip(this.getContext(), 54);
         this.setAttributeFromXml(context, attrs);
         this.initializeView();
     }
@@ -287,7 +287,7 @@ final class MeowBottomNavigationCell extends RelativeLayout {
         ViewCompat.setElevation(this._$_findCachedViewById(R.id.v_circle), this.progress > 0.7F ? Utils.dipf(this.getContext(), this.progress * 4.0F) : 0.0F);
         int m = Utils.dip(this.getContext(), 24);
         View var6 = this._$_findCachedViewById(R.id.v_circle);
-        var6.setX((1.0F - this.progress) * (float) (this.isFromLeft ? -m : m) + (float) (this.getMeasuredWidth() - Utils.dip(this.getContext(), 60)) / 2.0F);        var6 = this._$_findCachedViewById(R.id.v_circle);
+        var6.setX((1.0F - this.progress) * (float) (this.isFromLeft ? -m : m) + (float) (this.getMeasuredWidth() - Utils.dip(this.getContext(), 61)) / 2.0F);        var6 = this._$_findCachedViewById(R.id.v_circle);
         var6.setY((1.0F - this.progress) * (float) this.getMeasuredHeight() + (float) Utils.dip(this.getContext(), 0));
     }
 
