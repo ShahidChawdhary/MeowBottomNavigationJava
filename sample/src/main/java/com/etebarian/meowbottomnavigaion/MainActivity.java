@@ -30,10 +30,10 @@ public class MainActivity extends AppCompatActivity {
 
         MeowBottomNavigation bottomNavigation = findViewById(R.id.bottomNavigation);
 
-        bottomNavigation.add(new MeowBottomNavigation.Model(ID_HOME, R.drawable.home));
-        bottomNavigation.add(new MeowBottomNavigation.Model(ID_EXPLORE, R.drawable.favourite));
-        bottomNavigation.add(new MeowBottomNavigation.Model(ID_MESSAGE, R.drawable.ic_add));
-        bottomNavigation.add(new MeowBottomNavigation.Model(ID_ACCOUNT, R.drawable.user));
+        bottomNavigation.add(new MeowBottomNavigation.Model(1, R.drawable.home));
+        bottomNavigation.add(new MeowBottomNavigation.Model(2, R.drawable.favourite));
+        bottomNavigation.add(new MeowBottomNavigation.Model(3, R.drawable.ic_add));
+        bottomNavigation.add(new MeowBottomNavigation.Model(4, R.drawable.user));
         bottomNavigation.setOnClickMenuListener(new MeowBottomNavigation.ClickListener() {
             @Override
             public void onClickItem(MeowBottomNavigation.Model item) {
@@ -48,16 +48,16 @@ public class MainActivity extends AppCompatActivity {
 
                 String name;
                 switch (item.getId()) {
-                    case ID_HOME:
+                    case 1:
                         name = "HOME";
                         break;
-                    case ID_EXPLORE:
+                    case 2:
                         name = "EXPLORE";
                         break;
-                    case ID_MESSAGE:
+                    case 3:
                         name = "MESSAGE";
                         break;
-                    case ID_ACCOUNT:
+                    case 4:
                         name = "ACCOUNT";
                         break;
                     default:
