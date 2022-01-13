@@ -32,6 +32,7 @@ final class MeowBottomNavigationCell extends RelativeLayout {
     private int selectedIconColor;
     private int circleColor;
     private int icon;
+    private int selectedIcon;
 
     private String count;
     private int iconSize;
@@ -121,6 +122,19 @@ final class MeowBottomNavigationCell extends RelativeLayout {
 
     public final void setIcon(int value) {
         this.icon = value;
+        if (this.allowDraw) {
+            CellImageView var10000 = (CellImageView) this._$_findCachedViewById(R.id.iv);
+            var10000.setResource(value);
+        }
+
+    }
+
+    public final int getSelectedIcon() {
+        return this.selectedIcon;
+    }
+
+    public final void setSelectedIcon(int value) {
+        this.selectedIcon = value;
         if (this.allowDraw) {
             CellImageView var10000 = (CellImageView) this._$_findCachedViewById(R.id.iv);
             var10000.setResource(value);
@@ -328,7 +342,7 @@ final class MeowBottomNavigationCell extends RelativeLayout {
         if (var10000 != null) {
             var10000.setOnClickListener(new OnClickListener() {
                 public final void onClick(View it) {
-                    MeowBottomNavigationCell.this.getOnClickListener().onClickItem(new MeowBottomNavigation.Model(0,0));
+                    MeowBottomNavigationCell.this.getOnClickListener().onClickItem(new MeowBottomNavigation.Model(0,0,0));
                 }
             });
         }
@@ -374,6 +388,7 @@ final class MeowBottomNavigationCell extends RelativeLayout {
 
     public final void disableCell() {
         if (this.isEnabledCell) {
+            this.setSelectedIcon(this.getIcon());
             animateProgress$default(this, false, false, 2, null);
         }
 
@@ -382,6 +397,7 @@ final class MeowBottomNavigationCell extends RelativeLayout {
 
     public final void enableCell(boolean isAnimate) {
         if (!this.isEnabledCell) {
+            this.setSelectedIcon(this.getSelectedIcon());
             this.animateProgress(true, isAnimate);
         }
 

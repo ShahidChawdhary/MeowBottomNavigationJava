@@ -30,10 +30,10 @@ public class MainActivity extends AppCompatActivity {
 
         MeowBottomNavigation bottomNavigation = findViewById(R.id.bottomNavigation);
 
-        bottomNavigation.add(new MeowBottomNavigation.Model(1, R.drawable.home));
-        bottomNavigation.add(new MeowBottomNavigation.Model(2, R.drawable.favourite));
-        bottomNavigation.add(new MeowBottomNavigation.Model(3, R.drawable.ic_add));
-        bottomNavigation.add(new MeowBottomNavigation.Model(4, R.drawable.user));
+        bottomNavigation.add(new MeowBottomNavigation.Model(1, R.drawable.home, R.drawable.ic_home));
+        bottomNavigation.add(new MeowBottomNavigation.Model(2, R.drawable.favourite, R.drawable.ic_explore));
+        bottomNavigation.add(new MeowBottomNavigation.Model(3, R.drawable.ic_add,R.drawable.ic_message));
+        bottomNavigation.add(new MeowBottomNavigation.Model(4, R.drawable.user, R.drawable.ic_notification));
         bottomNavigation.setOnClickMenuListener(new MeowBottomNavigation.ClickListener() {
             @Override
             public void onClickItem(MeowBottomNavigation.Model item) {

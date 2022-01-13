@@ -45,6 +45,8 @@ public final class MeowBottomNavigation extends FrameLayout {
     private int defaultIconColor;
     private int selectedIconColor;
     private int backgroundBottomColor;
+    private int selectedIcon;
+    private int Icon;
     private int circleColor;
     private int shadowColor;
     private int countTextColor;
@@ -259,6 +261,7 @@ public final class MeowBottomNavigation extends FrameLayout {
         final MeowBottomNavigationCell cell = new MeowBottomNavigationCell(this.getContext());
         android.widget.LinearLayout.LayoutParams params = new android.widget.LinearLayout.LayoutParams(0, this.heightCell, 1.0F);
         cell.setLayoutParams(params);
+        cell.setSelectedIcon(model.getSelectedIcon());
         cell.setIcon(model.getIcon());
         cell.setCount(model.getCount());
         cell.setDefaultIconColor(this.defaultIconColor);
@@ -272,12 +275,14 @@ public final class MeowBottomNavigation extends FrameLayout {
 
             @Override
             public void onClickItem(Model item) {
+
                 if (MeowBottomNavigation.this.isShowing(model.getId())) {
                     MeowBottomNavigation.this.onReselectListener.onReselectItem(model);
                 }
 
                 if (!cell.isEnabledCell() && !MeowBottomNavigation.access$isAnimating$p(MeowBottomNavigation.this)) {
                     if (loged_in){
+                        cell.setSelectedIcon(model.getSelectedIcon());
                         MeowBottomNavigation.show$default(MeowBottomNavigation.this, model.getId(), false, 2, null);
                         MeowBottomNavigation.this.onClickedListener.onClickItem(model);
                     }else {
@@ -285,6 +290,7 @@ public final class MeowBottomNavigation extends FrameLayout {
                             //nothing
                             MeowBottomNavigation.this.onClickedListener.onClickItem(model);
                         } else {
+                            cell.setSelectedIcon(model.getSelectedIcon());
                             MeowBottomNavigation.show$default(MeowBottomNavigation.this, model.getId(), false, 2, null);
                             MeowBottomNavigation.this.onClickedListener.onClickItem(model);
                         }
@@ -561,6 +567,7 @@ public final class MeowBottomNavigation extends FrameLayout {
         private String count;
         private int id;
         private int icon;
+        private  int selectedIcon;
 
         public final String getCount() {
             return this.count;
@@ -586,9 +593,18 @@ public final class MeowBottomNavigation extends FrameLayout {
             this.icon = var1;
         }
 
-        public Model(int id, int icon) {
+        public final int getSelectedIcon() {
+            return this.selectedIcon;
+        }
+
+        public final void setSelectedIcon(int var1) {
+            this.selectedIcon = var1;
+        }
+
+        public Model(int id, int icon, int selectedIcon) {
             this.id = id;
             this.icon = icon;
+            this.selectedIcon = selectedIcon;
             this.count = "empty";
         }
     }
